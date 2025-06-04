@@ -1,0 +1,38 @@
+{
+  "teams": [
+    {
+      "name": "Команда API",
+      "keywords": ["API", "REST", "эндпоинт", "интеграция", "Swagger", "документация", "404", "500"],
+      "exclusions": ["Платежный API"],
+      "tags": ["backend", "web", "mobile", "android", "ios"],
+      "description": "Отвечает за разработку и поддержку внешних API компании",
+      "contacts": {
+        "slack": "@team_api",
+        "email": "api-support@company.com"
+      },
+      "examples": [
+        "API возвращает 500 ошибку на /v1/payments → Перенаправить в Платежи",
+        "Документация Swagger не обновлена"
+      ]
+    },
+    {
+      "name": "Команда платежей",
+      "keywords": ["платежи", "оплата", "транзакция", "refund", "invoice", "billing", "500", "failed_payment"],
+      "exclusions": ["Ошибка 404 в платежном API"],
+      "tags": ["web", "mobile", "android", "ios", "версия_приложения_5.2+"],
+      "description": "Отвечает за платежную систему, обработку транзакций, возвраты",
+      "contacts": {
+        "slack": "@payments_team",
+        "email": "payments-support@company.com"
+      },
+      "examples": [
+        "Платеж отклонен с ошибкой 500 в мобильном приложении (iOS 16+)",
+        "Как оформить возврат для транзакции №12345?"
+      ]
+    }
+  ],
+  "response_template": {
+    "success": "Запрос относится к {team}. Контакты: {contacts}. Пример решения: {example}",
+    "unknown": "Не удалось определить команду. Уточните: 1) Платформа 2) Код ошибки 3) Шаги воспроизведения"
+  }
+}
